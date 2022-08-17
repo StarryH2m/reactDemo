@@ -149,10 +149,8 @@ class Login extends React.Component{
 
     render() {
         return (
-            <div>
-                <div className="main-container-login">
-                    <button id="first-button" className="main-container-first-button" onClick={this.getRequestData2}>点击</button>
-                </div>
+            <div className="main-contain-login">
+                <button id="first-button" className="main-container-first-button" onClick={this.getRequestData2}>获取登录用户信息</button>
             </div>
         )
     }

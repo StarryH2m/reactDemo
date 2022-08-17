@@ -8,3 +8,12 @@ export function doRequest (...args) {
         throw Error(result.message);
     });
 }
+
+export function doRequest1(...args) {
+    return request(...args).then(result => {
+        if (result) {
+            return result;
+        }
+        throw Error("error");
+    });
+}
