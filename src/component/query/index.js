@@ -4,8 +4,9 @@ import {ds} from "../../api"
 import {get} from "lodash";
 import 'antd/dist/antd.css'
 import {getFileItem} from "antd/es/upload/utils";
-import MViewer from "../view";
+import Viewer from "../view";
 import Search from "../search";
+import SpaceTree from "../spacetree";
 
 class Query extends React.Component {
 
@@ -97,8 +98,9 @@ class Query extends React.Component {
         const {modelKey, dbKey, isLoad} = this.state;
         if(isLoad) {
             return <div className="main-model">
-                <MViewer modelKey={modelKey} dbKey={dbKey}/>
-                <Search/>
+                <Viewer modelKey={modelKey} dbKey={dbKey}/>
+                {/*<Search/>*/}
+                <SpaceTree/>
                 {/*<button onClick={this.getModelTreeList}>get ModelTreeList</button>*/}
                 {/*<button onClick={this.get3DTilesKey}>get 3D TilesDataKey</button>*/}
                 {/*<button onClick={this.get3DTilesDetailedInformation}>get 3D TilesDetailedInformation</button>*/}
@@ -106,5 +108,5 @@ class Query extends React.Component {
         }
     }
 }
-
+// M1660195405924_548419  M1660195405924_808985
 export default Query;

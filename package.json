@@ -15,7 +15,8 @@
     "react-dom": "^18.1.0",
     "react-router": "^4.4.0-beta.0",
     "react-router-config": "^4.4.0-beta.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "@ant-design/icons": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

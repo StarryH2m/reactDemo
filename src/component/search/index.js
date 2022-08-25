@@ -17,8 +17,10 @@ class Search extends React.Component {
             componentList: [],
         };
 
-        this.getModelTreeData = this.getModelTreeData.bind(this);
+        this.getComponentClassList = this.getComponentClassList.bind(this);
+        this.getComponentList = this.getComponentList.bind(this);
         this.getData = this.getData.bind(this);
+        this.keySearch = this.keySearch.bind(this);
     }
 
     componentDidMount() {
@@ -77,19 +79,37 @@ class Search extends React.Component {
         console.log(`selected ${value}`);
     }
 
+    keySearch = () => {
 
-    // 高亮查询到的构件
-    keySearch = (view3D) => {
+        const {componentList} = this.state;
+        let obj = componentList;
+        this.findComponent(obj);
+        // viewer3D.highlightModelsByKey("M1660527111361");
+    }
 
-        var input = document.getElementById('ipt').value;
-        Object.keys(this.state.componentList).map((key, value) => {
-            if(this.state.componentList[key].name.match(input)) {
-                // this.setHighLight(this.state.componentList[key].key);
-                // viewer3D.highlightComponentsByKey(this.state.componentList[key].key);
-                console.log("高亮这个构件")
+    findComponent(obj) {
+        const input = document.getElementById('ipt').value;
+        var keys = [];
+        Object.keys(obj).map((key, value) => {
+            if(obj[key].name) {
+                if(obj[key].name.match(input)) {
+                    // console.log("高亮这个构件", obj[key].key, obj[key].name);
+                    keys.push(obj[key].key);
+                    // viewer3D.highlightModelsByKey(obj[key].key);
+                    // viewer3D.highlightComponentsByKey(keys);
+                }
             }
-        })
-        // this.state.componentList[key].key
+            else {
+                obj = obj[key];
+                this.findComponent(obj)
+            }
+        });
+        if(keys.length === 0) {
+            alert("当前条件下无对应构件，请重新选填查找条件");
+        }
+        else {
+            viewer3D.highlightComponentsByKey(keys);
+        }
     }
 
     render() {
@@ -126,7 +146,7 @@ class Search extends React.Component {
 
                 {/*    构件名称：<Select style={{ width: 200, marginRight: '5px' }}*/}
                 {/*                 placeholder="构件名称"*/}
-                {/*                 onChange={this.getData()}*/}
+                {/*                 onChange={this.getData}*/}
 
                 {/*>*/}
                 {/*    {*/}
@@ -140,13 +160,15 @@ class Search extends React.Component {
                 {/*</Select>*/}
 
                     构件名称：<input id="ipt" type="text" placeholder="构件名称" ref={input => this.input = input}  />
-                    <button id="highLight">搜索</button>
-
+                    <button id="highLight" onClick={this.keySearch}>搜索</button>
 
                 </div>
             </div>
         )
+
     }
+
+
 }
 
 export default Search;

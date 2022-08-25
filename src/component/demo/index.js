@@ -6,11 +6,15 @@ import {ds} from "../../api";
 
 const Option = Select.Option;
 export default class Demo extends Component{
-    state={
-        capitals:[], // 省份
-        city:[], // 市
-        areaList:[], // 区
+    constructor() {
+        super();
+        this.state={
+            capitals:[], // 省份
+            city:[], // 市
+            areaList:[], // 区
+        }
     }
+
     componentDidMount () {
         this.handleAddressData();
     }
@@ -79,7 +83,9 @@ export default class Demo extends Component{
     getData=(value) =>{
         console.log(`selected ${value}`);
     }
+
     render(){
+
         return(
             <div style={{padding:'20px'}}>
                 <Select
@@ -147,6 +153,7 @@ export default class Demo extends Component{
 
                     }
                 </Select>
+
             </div>
         )
     }
