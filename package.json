@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "latest",
     "antd": "^4.21.3",
     "axios": "^0.27.2",
     "element-ui": "^2.15.9",
@@ -16,7 +17,7 @@
     "react-router": "^4.4.0-beta.0",
     "react-router-config": "^4.4.0-beta.0",
     "react-scripts": "5.0.1",
-    "@ant-design/icons": "latest"
+    "require": "^2.4.20"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -99,8 +99,8 @@ class Query extends React.Component {
         if(isLoad) {
             return <div className="main-model">
                 <Viewer modelKey={modelKey} dbKey={dbKey}/>
-                {/*<Search/>*/}
-                <SpaceTree/>
+                <Search/>
+                {/*<SpaceTree/>*/}
                 {/*<button onClick={this.getModelTreeList}>get ModelTreeList</button>*/}
                 {/*<button onClick={this.get3DTilesKey}>get 3D TilesDataKey</button>*/}
                 {/*<button onClick={this.get3DTilesDetailedInformation}>get 3D TilesDetailedInformation</button>*/}
@@ -108,5 +108,5 @@ class Query extends React.Component {
         }
     }
 }
-// M1660195405924_548419  M1660195405924_808985
+
 export default Query;

@@ -34,7 +34,7 @@ export function queryModelByModelCode(modelCode) {
 }
 
 /**
- * 根据3D TilesKey获取3D TilesCode
+ * 根据3D TilesCode获取3D TilesKey
  */
 export function query3DTilesKeyBy3DTilesCode(tilesCode) {
     return doRequest({

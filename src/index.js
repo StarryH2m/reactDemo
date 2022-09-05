@@ -8,7 +8,6 @@ import Search from "./component/search"
 import SpaceTree from "./component/spacetree";
 import Viewer from "./component/view";
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
@@ -22,6 +21,7 @@ root.render(
             <Route path='/search' element={<Search/>}></Route>
             <Route path='/spacetree' element={<SpaceTree/>}></Route>
             <Route path='/model' element={<Viewer/>}></Route>
+
         </Routes>
     </BrowserRouter>
 
